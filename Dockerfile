@@ -6,13 +6,14 @@ RUN apt-get update && apt-get install -y \
     bash \
     cowsay \
     fortune \
+    fortunes-min \
     netcat-openbsd \
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the application script into the container
-COPY wisecow.sh /usr/local/bin/wisecow.sh
+COPY serve.sh /usr/local/bin/wisecow.sh
 
 # Make the script executable
 RUN chmod +x /usr/local/bin/wisecow.sh
@@ -22,6 +23,4 @@ EXPOSE 4499
 
 # Command to run the application
 CMD ["/usr/local/bin/wisecow.sh"]
-
-
 
