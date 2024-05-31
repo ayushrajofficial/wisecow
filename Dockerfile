@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the application script into the container
-COPY serve.sh /usr/local/bin/wisecow.sh
+COPY wisecow.sh /usr/local/bin/wisecow.sh
 
 # Make the script executable
 RUN chmod +x /usr/local/bin/wisecow.sh
