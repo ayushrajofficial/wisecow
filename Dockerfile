@@ -23,3 +23,4 @@ EXPOSE 4499
 # Command to run the application
 CMD ["/usr/local/bin/serve.sh"]
 
+
