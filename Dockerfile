@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     bash \
     cowsay \
     fortune \
-    netcat \
+    netcat-openbsd \
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
