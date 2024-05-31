@@ -6,6 +6,8 @@ RSPFILE=response
 rm -f $RSPFILE
 mkfifo $RSPFILE
 
+export PATH=$PATH:/usr/games
+
 get_api() {
     read line
     echo $line
@@ -48,5 +50,3 @@ main() {
 }
 
 main
-
-
