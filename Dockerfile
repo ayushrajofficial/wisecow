@@ -12,15 +12,16 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the application script into the container
-COPY wisecow.sh /usr/local/bin/wisecow.sh
+COPY serve.sh /usr/local/bin/serve.sh
 
 # Make the script executable
-RUN chmod +x /usr/local/bin/wisecow.sh
+RUN chmod +x /usr/local/bin/serve.sh
 
 # Expose the port the application runs on
 EXPOSE 4499
 
 # Command to run the application
-CMD ["/usr/local/bin/wisecow.sh"]
+CMD ["/usr/local/bin/serve.sh"]
+
 
 
