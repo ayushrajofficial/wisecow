@@ -1,12 +1,15 @@
-# Use an official lightweight base image
-FROM alpine:latest
+# Use an official lightweight Debian-based image
+FROM debian:latest
 
 # Install necessary packages
-RUN apk update && apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     bash \
     cowsay \
     fortune \
-    netcat-openbsd
+    netcat \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy the application script into the container
 COPY serve.sh /usr/local/bin/serve.sh
@@ -19,3 +22,4 @@ EXPOSE 4499
 
 # Command to run the application
 CMD ["/usr/local/bin/serve.sh"]
+
