@@ -25,6 +25,10 @@ EOF
 }
 
 prerequisites() {
+    echo "Checking prerequisites..."
+    command -v cowsay >/dev/null 2>&1 && echo "cowsay found" || echo "cowsay not found"
+    command -v fortune >/dev/null 2>&1 && echo "fortune found" || echo "fortune not found"
+
     command -v cowsay >/dev/null 2>&1 &&
     command -v fortune >/dev/null 2>&1 || 
         { 
@@ -44,4 +48,5 @@ main() {
 }
 
 main
+
 
